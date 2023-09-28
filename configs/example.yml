@@ -1,0 +1,92 @@
+DATA:
+  NUM_CLASSES: 17
+  TRAIN:
+    SIM:
+      ROOT_DIR: "../dataset/sim"
+      SPLIT_FILE: "../dataset/sim/list_file.txt"
+      META_NAME: "meta.pkl"
+      DEPTH_NAME: "depthL.png"
+      LEFT_NAME: "0128_irL_kuafu_half.png"
+      RIGHT_NAME: "0128_irR_kuafu_half.png"
+      LEFT_PATTERN_NAME: "0128_irL_kuafu_half.png"
+      RIGHT_PATTERN_NAME: "0128_irR_kuafu_half.png"
+      DEPTH_R_NAME: "depthR.png"
+    REAL:
+      ROOT_DIR: "../dataset/real"
+      SPLIT_FILE: "../dataset/real/list_file.txt"
+      LEFT_NAME: "1024_irL_real.png"
+      RIGHT_NAME: "1024_irR_real.png"
+      LEFT_PATTERN_NAME: "1024_irL_real.png"
+      RIGHT_PATTERN_NAME: "1024_irR_real.png"
+  VAL:
+    SIM:
+      ROOT_DIR: "../dataset/sim"
+      SPLIT_FILE: "../dataset/sim/list_file.txt"
+      META_NAME: "meta.pkl"
+      DEPTH_NAME: "depthL.png"
+      LEFT_NAME: "0128_irL_kuafu_half.png"
+      RIGHT_NAME: "0128_irR_kuafu_half.png"
+      LEFT_PATTERN_NAME: "0128_irL_kuafu_half.png"
+      RIGHT_PATTERN_NAME: "0128_irR_kuafu_half.png"
+  TEST:
+    REAL:
+      ROOT_DIR: "./dataset/real"
+      SPLIT_FILE: "./dataset/real/list_file.txt"
+      META_NAME: "meta.pkl"
+      DEPTH_NAME: "depthL.png"
+      LEFT_NAME: "1024_irL_real.png"
+      RIGHT_NAME: "1024_irR_real.png"
+      LABEL_NAME: "irL_label_image.png"
+      NORMAL_NAME: "normalL.png"
+      HEIGHT: 544
+      WIDTH: 960
+    SIM:
+      ROOT_DIR: "./dataset/sim"
+      SPLIT_FILE: "./dataset/sim/list_file.txt"
+      META_NAME: "meta.pkl"
+      DEPTH_NAME: "depthL.png"
+      LEFT_NAME: "0128_irL_kuafu_half.png"
+      RIGHT_NAME: "0128_irR_kuafu_half.png"
+      HEIGHT: 544
+      WIDTH: 960
+MODEL_TYPE: "PSMNet"
+PSMNetRange:
+  MIN_DISP: 12
+  MAX_DISP: 96
+  NUM_DISP: 192
+  SET_ZERO: True
+PSMNet:
+  MAX_DISP: 128
+OPTIMIZER:
+  TYPE: "Adam"
+  LR: 1e-4
+LR_SCHEDULER:
+  TYPE: 'StepLR'
+  StepLR:
+    step_size: 20000
+    gamma: 0.7
+TRAIN:
+  BATCH_SIZE: 1
+  NUM_WORKERS: 1
+  LOG_PERIOD: 10
+  CHECKPOINT_PERIOD: 1000
+  MAX_TO_KEEP: 2
+  MAX_ITER: 50000
+
+
+VAL:
+  BATCH_SIZE: 1
+  NUM_WORKERS: 1
+  PERIOD: 10
+  LOG_PERIOD: 10
+LOSS:
+  SIM_REPROJ:
+    WEIGHT: 0.01
+  REAL_REPROJ:
+    WEIGHT: 2.0
+TEST:
+  NUM_WORKERS: 0
+  MAX_DISP: 128
+  WEIGHT: "/data_disk/disk1/activezero++_transtouch/active_zero2_clean/outputs/example/model_050000.pth"
+  USE_MASK: True
+  DEPTH_RANGE: (0.01, 2)
