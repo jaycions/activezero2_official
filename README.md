@@ -78,7 +78,7 @@ conda env create -f environment.yml
 ## Dataset
 We provide the sample dataset for training and testing. You can find it in folder 'dataset/real' and 'dataset/sim'.  If you want to do the training or inference on your own dataset, you can change the format of your dataset according to out provided dataset.
 
-More specifically, you can follow the instruction to generate the datset:
+More specifically, you can follow the instruction to generate the dataset:
 
 For dataset in simulation domain, you can generate the simulated dataset using Sapien.To generate the dataset in simulation domain, you can run the following command in the terminal:
 ```
