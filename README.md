@@ -80,7 +80,9 @@ We provide the sample dataset for training and testing. You can find it in folde
 
 More specifically, you can follow the instruction to generate the dataset:
 
-For dataset in simulation domain, you can generate the simulated dataset using Sapien.To generate the dataset in simulation domain, you can run the following command in the terminal:
+For dataset in simulation domain, you can generate the simulated dataset using Sapien.
+
+To generate the dataset in simulation domain, you can run the following command in the terminal:
 ```
 python data_rendering/render_script.py --sub 1 --total 1 --target-root ./dataset_sim --primitives
 ```
