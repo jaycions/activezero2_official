@@ -57,6 +57,19 @@ PSMNetRange:
   SET_ZERO: True
 PSMNet:
   MAX_DISP: 128
+
+#MODEL_TYPE: "PSMNetEdgeNormal"
+PSMNetEdgeNormal:
+  DILATION: 3
+  EDGE_WEIGHT: 15.0
+  EPSILON: 1.0
+  GRAD_THRESHOLD: 10.0
+  MAX_DISP: 96
+  MIN_DISP: 12
+  NUM_DISP: 192
+  SET_ZERO: False
+  USE_OFF: False
+  USE_VOLUME: False
 OPTIMIZER:
   TYPE: "Adam"
   LR: 1e-4
