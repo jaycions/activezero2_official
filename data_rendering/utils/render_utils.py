@@ -32,6 +32,7 @@ PRIMITIVE_MIN = 25
 PRIMITIVE_MAX = 50
 
 
+os.sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
 

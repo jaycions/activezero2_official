@@ -12,8 +12,8 @@ ENV_MAP_LIST = "/messytable-slow/mini-imagenet-tools/rand_env/list.txt"
 
 if not osp.exists(TEXTURE_FOLDER):
     #please change to path of "TEXTURE_FOLDER" and "TEXTURE_LIST" in your machine to the path of "mini-imagenet" dataset(you need to download the dataset of mini-imagenet first by your self)
-    TEXTURE_FOLDER = "/mnt/sda/activezero/mini-imagenet/"
-    TEXTURE_LIST = "/mnt/sda/activezero/mini-imagenet/mini_imagenet_list.txt"
+    TEXTURE_FOLDER = "./data_rendering/mini_imagenet/IMagenet-master/tiny-imagenet-200/test/images"
+    TEXTURE_LIST = "./data_rendering/mini_imagenet/files_name.txt"
 
     OBJECT_DIR = "/home/rayu/Projects/ICCV2021_Diagnosis/ocrtoc_materials/models/"
     OBJECT_CSV_PATH = "/home/rayu/Projects/ICCV2021_Diagnosis/ocrtoc_materials/objects.csv"

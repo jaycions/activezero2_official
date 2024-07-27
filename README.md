@@ -82,6 +82,8 @@ More specifically, you can follow the instruction to generate the dataset:
 
 For dataset in simulation domain, you can generate the simulated dataset using Sapien.
 
+Before rendering the sim dataset, you need to first download the zip file of textures(images from mini-imagenet) from this [link](https://github.com/seshuad/IMagenet/archive/refs/heads/master.zip). Then you need to unzip the file "IMagenet-master.zip" and put the folder 'IMagenet-master' under the folder 'data_rendering/mini_imagenet'.
+
 To generate the dataset in simulation domain, you can run the following command in the terminal:
 ```
 python data_rendering/render_script.py --sub 1 --total 1 --target-root ./dataset_sim --primitives
